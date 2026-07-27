@@ -3,14 +3,14 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import cors from "cors";
 import User from "./model/User.js";
-import bcrypt from "bcryptjs";
+import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 dotenv.config();
 
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const CONN = String(process.env.CONN || "");
+// const CONN = String(process.env.CONN || "");
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -18,6 +18,8 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
     res.send("Hello, World!");
 });
+
+const CONN = process.env.NODE_ENV === "production" ? process.env.CONN2 : process.env.CONN;
 
 // app.post("/users", async (req, res) => {
 //     try {
