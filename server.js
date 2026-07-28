@@ -9,6 +9,8 @@ const connectDB = require("./config/database");
 const authRoutes = require("./routes/authRoutes");
 const advertisementRoutes = require("./routes/advertisementRoutes");
 const userRoutes = require("./routes/userRoutes");
+const messageRoutes = require("./routes/messageRoutes");
+const adminRoutes = require("./routes/adminRoutes");
 
 const app = express();
 
@@ -33,6 +35,8 @@ app.use("/api/favorites", favoriteRoutes);
 const reviewRoutes = require("./routes/reviewRoutes");
 
 app.use("/api/reviews", reviewRoutes);
+app.use("/api/messages", messageRoutes);
+app.use("/api/admin", adminRoutes);
 
 app.get("/", (req, res) => {
   res.send("Advertisement API is running 🚀");
