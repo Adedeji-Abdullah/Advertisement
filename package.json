@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "vite",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -18,5 +19,11 @@
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.8.0",
     "multer": "^2.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.4",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "vite": "^8.1.5"
   }
 }
