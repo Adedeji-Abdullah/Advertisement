@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
 import Home from "./pages/home/Home";
+import Browse from "./pages/browse/Browse";
+import Insights from "./pages/insights/Insights";
+
 import Header from "./components/Header";
 import "./App.css";
 
@@ -21,11 +25,15 @@ function App() {
   }, []);
 
   return (
-    <>
+    <BrowserRouter>
       {/* <div>{backendData}</div> */}
       <Header />
-      <Home />
-    </>
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="/browse" element={<Browse />} />
+        <Route path="/insights" element={<Insights />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
