@@ -18,7 +18,7 @@ function Header() {
         </section>
       </AppNavLink>
       <nav
-        className={clsx("flex gap-8", pathname === "/" ? "mx-auto" : "ml-70")}
+        className={clsx("hidden md:flex gap-8", pathname === "/" ? "mx-auto" : "ml-70")}
       >
         <ul className="flex gap-3.5 items-center">
           <li>
