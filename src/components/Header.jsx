@@ -9,12 +9,16 @@ function Header() {
 
   return (
     <header className="flex justify-between items-center p-1 fixed left-0 right-0 bg-surface-lowest">
-      <section className="flex gap-2">
-        <span className="material-symbols-outlined text-primary">campaign</span>
-        <h1 className="text-lg text-primary">AdVanta</h1>
-      </section>
+      <AppNavLink to="/">
+        <section className="flex gap-2">
+          <span className="material-symbols-outlined text-primary">
+            campaign
+          </span>
+          <h1 className="text-lg text-primary">AdVanta</h1>
+        </section>
+      </AppNavLink>
       <nav
-        className={clsx("flex gap-8", pathname === "/" ? "mx-auto" : "ml-32")}
+        className={clsx("flex gap-8", pathname === "/" ? "mx-auto" : "ml-70")}
       >
         <ul className="flex gap-3.5 items-center">
           <li>
@@ -26,7 +30,7 @@ function Header() {
           <li>
             <AppNavLink to="/insights">Insights</AppNavLink>
           </li>
-          <li>
+          <li className={clsx(pathname === "/" ? "visible" : "hidden")}>
             <Button>Post an Ad</Button>
           </li>
         </ul>
