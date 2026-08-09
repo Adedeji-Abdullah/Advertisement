@@ -8,7 +8,7 @@ function Header() {
   const { pathname } = useLocation();
 
   return (
-    <header className="flex justify-between items-center p-1 fixed left-0 right-0 bg-surface-lowest">
+    <header className="flex justify-between items-center p-3 fixed left-0 right-0 bg-surface-lowest">
       <AppNavLink to="/">
         <section className="flex gap-2">
           <span className="material-symbols-outlined text-primary">
@@ -18,7 +18,10 @@ function Header() {
         </section>
       </AppNavLink>
       <nav
-        className={clsx("hidden md:flex gap-8", pathname === "/" ? "mx-auto" : "ml-70")}
+        className={clsx(
+          "hidden md:flex gap-8",
+          pathname === "/" ? "mx-auto" : "ml-70",
+        )}
       >
         <ul className="flex gap-3.5 items-center">
           <li>

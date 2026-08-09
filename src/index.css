@@ -37,8 +37,8 @@
   @apply rounded-md bg-primary px-4 py-2 font-geist text-label-md text-on-primary transition-colors hover:bg-primary-container cursor-pointer;
 }
 
-@utility card{
-  @apply rounded-xl bg-surface-lowest p-6 shadow-card
+@utility card {
+  @apply rounded-xl bg-surface-lowest p-6 shadow-card;
 }
 
 @theme {

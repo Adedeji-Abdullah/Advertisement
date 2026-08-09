@@ -1,5 +1,13 @@
+import Headline from "./Headline";
+import SearchCategories from "./SearchCategories";
+
 function Home() {
-  return <div className="pt-20">Homepage</div>;
+  return (
+    <main className="pt-30">
+      <Headline />
+      <SearchCategories />
+    </main>
+  );
 }
 
 export default Home;
