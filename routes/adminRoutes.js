@@ -7,7 +7,7 @@ const admin = require("../middleware/admin");
 const {
   getDashboardStats,
   getUsers,
-  deleteUser
+  deleteUser,
 } = require("../controllers/adminController");
 
 // Dashboard statistics

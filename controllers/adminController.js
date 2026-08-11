@@ -3,44 +3,36 @@ const Advertisement = require("../models/Advertisement");
 const Review = require("../models/Review");
 const Message = require("../models/Message");
 
-
 // Dashboard statistics
 const getDashboardStats = async (req, res) => {
   try {
     const totalUsers = await User.countDocuments();
-    const totalAdvertisements =
-      await Advertisement.countDocuments();
-    const totalReviews =
-      await Review.countDocuments();
-    const totalMessages =
-      await Message.countDocuments();
+    const totalAdvertisements = await Advertisement.countDocuments();
+    const totalReviews = await Review.countDocuments();
+    const totalMessages = await Message.countDocuments();
 
     res.json({
       totalUsers,
       totalAdvertisements,
       totalReviews,
-      totalMessages
+      totalMessages,
     });
-
   } catch (error) {
     res.status(500).json({
-      message: error.message
+      message: error.message,
     });
   }
 };
 
-
 // Get all users
 const getUsers = async (req, res) => {
   try {
-    const users = await User.find()
-      .select("-password");
+    const users = await User.find().select("-password");
 
     res.json(users);
-
   } catch (error) {
     res.status(500).json({
-      message: error.message
+      message: error.message,
     });
   }
 };
@@ -52,19 +44,18 @@ const deleteUser = async (req, res) => {
 
     if (!user) {
       return res.status(404).json({
-        message: "User not found"
+        message: "User not found",
       });
     }
 
     await user.deleteOne();
 
     res.json({
-      message: "User deleted successfully"
+      message: "User deleted successfully",
     });
-
   } catch (error) {
     res.status(500).json({
-      message: error.message
+      message: error.message,
     });
   }
 };
@@ -72,5 +63,5 @@ const deleteUser = async (req, res) => {
 module.exports = {
   getDashboardStats,
   getUsers,
-  deleteUser
+  deleteUser,
 };

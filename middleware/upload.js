@@ -8,11 +8,10 @@ const storage = multer.diskStorage({
   },
 
   filename: (req, file, cb) => {
-    const uniqueName =
-      Date.now() + path.extname(file.originalname);
+    const uniqueName = Date.now() + path.extname(file.originalname);
 
     cb(null, uniqueName);
-  }
+  },
 });
 
 // File filter
@@ -32,7 +31,7 @@ const fileFilter = (req, file, cb) => {
 
 const upload = multer({
   storage,
-  fileFilter
+  fileFilter,
 });
 
 module.exports = upload;

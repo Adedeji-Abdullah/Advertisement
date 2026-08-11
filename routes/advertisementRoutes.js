@@ -11,9 +11,8 @@ const {
   updateAdvertisement,
   deleteAdvertisement,
   searchAdvertisements,
-  getByCategory
+  getByCategory,
 } = require("../controllers/advertisementController");
-
 
 // Search advertisements
 router.get("/search", searchAdvertisements);
@@ -28,17 +27,11 @@ router.get("/", getAdvertisements);
 router.get("/:id", getAdvertisement);
 
 // Create advertisement
-router.post(
-  "/",
-  protect,
-  upload.single("image"),
-  createAdvertisement
-);
+router.post("/", protect, upload.single("image"), createAdvertisement);
 // Update advertisement
 router.put("/:id", protect, updateAdvertisement);
 
 // Delete advertisement
 router.delete("/:id", protect, deleteAdvertisement);
-
 
 module.exports = router;

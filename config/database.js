@@ -2,7 +2,9 @@ const mongoose = require("mongoose");
 
 const connectDB = async () => {
   if (!process.env.MONGO_URI) {
-    console.log("MongoDB URI not configured, continuing without database connection");
+    console.log(
+      "MongoDB URI not configured, continuing without database connection",
+    );
     return;
   }
 

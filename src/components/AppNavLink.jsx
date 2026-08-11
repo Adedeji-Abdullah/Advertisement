@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-export default function AppNavLink({to, children}) {
+export default function AppNavLink({ to, children }) {
   return (
     <NavLink
       to={to}

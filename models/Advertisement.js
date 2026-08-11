@@ -4,44 +4,41 @@ const advertisementSchema = new mongoose.Schema(
   {
     title: {
       type: String,
-      required: true
+      required: true,
     },
 
     description: {
       type: String,
-      required: true
+      required: true,
     },
 
     price: {
       type: Number,
-      required: true
+      required: true,
     },
 
     category: {
       type: String,
-      required: true
+      required: true,
     },
 
     image: {
-      type: String
+      type: String,
     },
 
     phone: {
-      type: String
+      type: String,
     },
 
     owner: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true
-    }
+      required: true,
+    },
   },
   {
-    timestamps: true
-  }
+    timestamps: true,
+  },
 );
 
-module.exports = mongoose.model(
-  "Advertisement",
-  advertisementSchema
-);
+module.exports = mongoose.model("Advertisement", advertisementSchema);

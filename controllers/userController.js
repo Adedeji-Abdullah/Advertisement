@@ -5,38 +5,32 @@ const bcrypt = require("bcryptjs");
 // Get my profile
 const getProfile = async (req, res) => {
   try {
-    const user = await User.findById(req.user.id)
-      .select("-password");
+    const user = await User.findById(req.user.id).select("-password");
 
     if (!user) {
       return res.status(404).json({
-        message: "User not found"
+        message: "User not found",
       });
     }
 
     res.json(user);
-
   } catch (error) {
     res.status(500).json({
-      message: error.message
+      message: error.message,
     });
   }
 };
 
-
 // Update my profile
 const updateProfile = async (req, res) => {
   try {
-    const {
-      name,
-      phone
-    } = req.body;
+    const { name, phone } = req.body;
 
     const user = await User.findById(req.user.id);
 
     if (!user) {
       return res.status(404).json({
-        message: "User not found"
+        message: "User not found",
       });
     }
 
@@ -51,30 +45,27 @@ const updateProfile = async (req, res) => {
         id: user._id,
         name: user.name,
         email: user.email,
-        phone: user.phone
-      }
+        phone: user.phone,
+      },
     });
-
   } catch (error) {
     res.status(500).json({
-      message: error.message
+      message: error.message,
     });
   }
 };
-
 
 // Get my advertisements
 const getMyAdvertisements = async (req, res) => {
   try {
     const advertisements = await Advertisement.find({
-      owner: req.user.id
+      owner: req.user.id,
     });
 
     res.json(advertisements);
-
   } catch (error) {
     res.status(500).json({
-      message: error.message
+      message: error.message,
     });
   }
 };
@@ -82,44 +73,34 @@ const getMyAdvertisements = async (req, res) => {
 // Change password
 const changePassword = async (req, res) => {
   try {
-    const {
-      oldPassword,
-      newPassword
-    } = req.body;
+    const { oldPassword, newPassword } = req.body;
 
     const user = await User.findById(req.user.id);
 
     if (!user) {
       return res.status(404).json({
-        message: "User not found"
+        message: "User not found",
       });
     }
 
-    const isMatch = await bcrypt.compare(
-      oldPassword,
-      user.password
-    );
+    const isMatch = await bcrypt.compare(oldPassword, user.password);
 
     if (!isMatch) {
       return res.status(400).json({
-        message: "Old password is incorrect"
+        message: "Old password is incorrect",
       });
     }
 
-    user.password = await bcrypt.hash(
-      newPassword,
-      10
-    );
+    user.password = await bcrypt.hash(newPassword, 10);
 
     await user.save();
 
     res.json({
-      message: "Password changed successfully"
+      message: "Password changed successfully",
     });
-
   } catch (error) {
     res.status(500).json({
-      message: error.message
+      message: error.message,
     });
   }
 };
@@ -133,13 +114,11 @@ const forgotPassword = async (req, res) => {
 
     if (!user) {
       return res.status(404).json({
-        message: "User not found"
+        message: "User not found",
       });
     }
 
-    const resetCode = Math.floor(
-      100000 + Math.random() * 900000
-    ).toString();
+    const resetCode = Math.floor(100000 + Math.random() * 900000).toString();
 
     user.resetPasswordCode = resetCode;
 
@@ -149,12 +128,11 @@ const forgotPassword = async (req, res) => {
 
     res.json({
       message: "Reset code generated successfully",
-      code: resetCode
+      code: resetCode,
     });
-
   } catch (error) {
     res.status(500).json({
-      message: error.message
+      message: error.message,
     });
   }
 };
@@ -162,17 +140,13 @@ const forgotPassword = async (req, res) => {
 // Reset password
 const resetPassword = async (req, res) => {
   try {
-    const {
-      email,
-      code,
-      newPassword
-    } = req.body;
+    const { email, code, newPassword } = req.body;
 
     const user = await User.findOne({ email });
 
     if (!user) {
       return res.status(404).json({
-        message: "User not found"
+        message: "User not found",
       });
     }
 
@@ -181,14 +155,11 @@ const resetPassword = async (req, res) => {
       user.resetPasswordExpire < Date.now()
     ) {
       return res.status(400).json({
-        message: "Invalid or expired reset code"
+        message: "Invalid or expired reset code",
       });
     }
 
-    user.password = await bcrypt.hash(
-      newPassword,
-      10
-    );
+    user.password = await bcrypt.hash(newPassword, 10);
 
     user.resetPasswordCode = undefined;
     user.resetPasswordExpire = undefined;
@@ -196,12 +167,11 @@ const resetPassword = async (req, res) => {
     await user.save();
 
     res.json({
-      message: "Password reset successfully"
+      message: "Password reset successfully",
     });
-
   } catch (error) {
     res.status(500).json({
-      message: error.message
+      message: error.message,
     });
   }
 };
@@ -212,30 +182,27 @@ const getSellerProfile = async (req, res) => {
     const User = require("../models/User");
     const Advertisement = require("../models/Advertisement");
 
-    const user = await User.findById(req.params.id)
-      .select("name phone profileImage createdAt");
+    const user = await User.findById(req.params.id).select(
+      "name phone profileImage createdAt",
+    );
 
     if (!user) {
       return res.status(404).json({
-        message: "Seller not found"
+        message: "Seller not found",
       });
     }
 
-
     const advertisements = await Advertisement.find({
-      owner: req.params.id
+      owner: req.params.id,
     });
-
 
     res.json({
       user,
-      advertisements
+      advertisements,
     });
-
-
   } catch (error) {
     res.status(500).json({
-      message: error.message
+      message: error.message,
     });
   }
 };
@@ -247,5 +214,5 @@ module.exports = {
   changePassword,
   forgotPassword,
   resetPassword,
-  getSellerProfile
+  getSellerProfile,
 };
