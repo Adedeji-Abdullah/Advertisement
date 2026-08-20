@@ -7,7 +7,11 @@ export default function SearchCategories() {
       <section className="pl-7 flex flex-col gap-y-10">
         <section className="flex gap-x-2">
           <span className="material-symbols-outlined">search</span>
-          <input type="text" className="outline-0" placeholder="What are you looking for?" />
+          <input
+            type="text"
+            className="outline-0"
+            placeholder="What are you looking for?"
+          />
         </section>
         <section className="flex gap-x-2">
           <span className="material-symbols-outlined">category</span>
@@ -22,7 +26,7 @@ export default function SearchCategories() {
       </section>
       <button
         type="submit"
-        className="bg-primary text-surface w-full rounded-full p-2 cursor-pointer hover:bg-primary-container transition-colors"
+        className="bg-primary text-surface w-full rounded-full px-2 py-3 cursor-pointer text-sm font-bold hover:bg-primary-container transition-colors"
       >
         Search
       </button>

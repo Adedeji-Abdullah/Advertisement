@@ -1,4 +1,5 @@
 import Headline from "./Headline";
+import PopularCategories from "./PopularCategories";
 import SearchCategories from "./SearchCategories";
 
 function Home() {
@@ -6,6 +7,7 @@ function Home() {
     <main className="pt-30">
       <Headline />
       <SearchCategories />
+      <PopularCategories />
     </main>
   );
 }
