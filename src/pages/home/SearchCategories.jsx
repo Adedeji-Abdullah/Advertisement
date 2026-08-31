@@ -2,9 +2,9 @@ export default function SearchCategories() {
   return (
     <form
       action="#"
-      className="mt-10 bg-on-primary rounded-4xl flex flex-col gap-y-10 items-start w-full max-w-9/10 mx-auto py-3 px-2"
+      className="bg-on-primary mx-auto mt-10 flex w-full max-w-9/10 flex-col items-start gap-y-10 rounded-4xl px-2 py-3"
     >
-      <section className="pl-7 flex flex-col gap-y-10">
+      <section className="flex flex-col gap-y-10 pl-7">
         <section className="flex gap-x-2">
           <span className="material-symbols-outlined">search</span>
           <input
@@ -26,7 +26,7 @@ export default function SearchCategories() {
       </section>
       <button
         type="submit"
-        className="bg-primary text-surface w-full rounded-full px-2 py-3 cursor-pointer text-sm font-bold hover:bg-primary-container transition-colors"
+        className="bg-primary text-surface hover:bg-primary-container w-full cursor-pointer rounded-full px-2 py-3 text-sm font-bold transition-colors"
       >
         Search
       </button>
