@@ -5,34 +5,34 @@ const messageSchema = new mongoose.Schema(
     sender: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true
+      required: true,
     },
 
     receiver: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true
+      required: true,
     },
 
     advertisement: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Advertisement",
-      required: true
+      required: true,
     },
 
     message: {
       type: String,
-      required: true
+      required: true,
     },
 
     isRead: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
   {
-    timestamps: true
-  }
+    timestamps: true,
+  },
 );
 
 module.exports = mongoose.model("Message", messageSchema);

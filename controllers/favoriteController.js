@@ -11,16 +11,14 @@ const addFavorite = async (req, res) => {
     }
 
     res.json({
-      message: "Added to favorites"
+      message: "Added to favorites",
     });
-
   } catch (error) {
     res.status(500).json({
-      message: error.message
+      message: error.message,
     });
   }
 };
-
 
 // Remove from favorites
 const removeFavorite = async (req, res) => {
@@ -28,41 +26,36 @@ const removeFavorite = async (req, res) => {
     const user = await User.findById(req.user.id);
 
     user.favorites = user.favorites.filter(
-      (fav) => fav.toString() !== req.params.id
+      (fav) => fav.toString() !== req.params.id,
     );
 
     await user.save();
 
     res.json({
-      message: "Removed from favorites"
+      message: "Removed from favorites",
     });
-
   } catch (error) {
     res.status(500).json({
-      message: error.message
+      message: error.message,
     });
   }
 };
-
 
 // Get my favorites
 const getFavorites = async (req, res) => {
   try {
-    const user = await User.findById(req.user.id)
-      .populate("favorites");
+    const user = await User.findById(req.user.id).populate("favorites");
 
     res.json(user.favorites);
-
   } catch (error) {
     res.status(500).json({
-      message: error.message
+      message: error.message,
     });
   }
 };
 
-
 module.exports = {
   addFavorite,
   removeFavorite,
-  getFavorites
+  getFavorites,
 };

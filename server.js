@@ -24,6 +24,10 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
+app.get("/api/data", (req, res) => {
+  res.json({ message: "Backend connected successfully" });
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/advertisements", advertisementRoutes);
 app.use("/api/users", userRoutes);

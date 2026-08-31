@@ -10,9 +10,8 @@ const {
   changePassword,
   forgotPassword,
   resetPassword,
-  getSellerProfile
+  getSellerProfile,
 } = require("../controllers/userController");
-
 
 // Get my profile
 router.get("/profile", protect, getProfile);

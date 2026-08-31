@@ -6,9 +6,8 @@ const protect = require("../middleware/auth");
 const {
   addFavorite,
   removeFavorite,
-  getFavorites
+  getFavorites,
 } = require("../controllers/favoriteController");
-
 
 // Add advertisement to favorites
 router.post("/:id", protect, addFavorite);
@@ -18,6 +17,5 @@ router.delete("/:id", protect, removeFavorite);
 
 // Get my favorites
 router.get("/", protect, getFavorites);
-
 
 module.exports = router;
