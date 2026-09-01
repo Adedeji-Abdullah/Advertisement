@@ -26,9 +26,9 @@ export default function CategoriesGrid() {
     },
     {
       id: 5,
-      icon: "rocket_launch",
-      title: "Startups",
-      color: "on-primary-container",
+      icon: "real_estate_agent",
+      title: "Property",
+      color: "secondary-container",
     },
     {
       id: 6,
@@ -37,4 +37,12 @@ export default function CategoriesGrid() {
       color: "on-primary-container",
     },
   ];
+  return (
+    <section className="my-3.5 px-2.5">
+      <section className="bg-on-primary flex size-32 w-full max-w-2/5 flex-col justify-center text-center">
+        <span className="material-symbols-outlined">rocket_launch</span>
+        <h3>Startups</h3>
+      </section>
+    </section>
+  );
 }
