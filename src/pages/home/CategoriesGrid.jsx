@@ -37,6 +37,7 @@ export default function CategoriesGrid() {
       color: "on-primary-container",
     },
   ];
+
   return (
     <section className="my-3.5 px-2.5">
       <section className="bg-on-primary flex size-32 w-full max-w-2/5 flex-col justify-center text-center">
