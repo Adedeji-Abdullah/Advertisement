@@ -8,7 +8,7 @@ function Header() {
   const { pathname } = useLocation();
 
   return (
-    <header className="bg-surface-lowest fixed right-0 left-0 flex items-center justify-between p-3">
+    <header className="bg-surface-lowest fixed right-0 left-0 flex items-center justify-between px-10 py-3">
       <AppNavLink to="/">
         <section className="flex gap-2">
           <span className="material-symbols-outlined text-primary">
@@ -19,11 +19,11 @@ function Header() {
       </AppNavLink>
       <nav
         className={clsx(
-          "hidden gap-8 md:flex",
-          pathname === "/" ? "mx-auto" : "ml-70",
+          "tablet:flex hidden gap-8",
+          pathname === "/" ? "mx-auto" : "ml-50",
         )}
       >
-        <ul className="flex items-center gap-3.5">
+        <ul className="flex items-center gap-5">
           <li>
             <AppNavLink to="/">Explore</AppNavLink>
           </li>

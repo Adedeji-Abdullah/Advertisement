@@ -30,18 +30,19 @@
 }
 
 @utility nav-link {
-  @apply font-geist text-label-md transition-colors duration-200 cursor-pointer;
+  @apply font-geist text-label-md cursor-pointer transition-colors duration-200;
 }
 
 @utility btn-primary {
-  @apply rounded-md bg-primary px-4 py-2 font-geist text-label-md text-on-primary transition-colors hover:bg-primary-container cursor-pointer;
+  @apply bg-primary font-geist text-label-md text-on-primary hover:bg-primary-container cursor-pointer rounded-md px-4 py-2 transition-colors;
 }
 
 @utility card {
-  @apply rounded-xl bg-surface-lowest p-6 shadow-card;
+  @apply bg-surface-lowest shadow-card rounded-xl p-6;
 }
 
 @theme {
+  --breakpoint-tablet: 44.4rem;
   /* ================================
      COLORS
      ================================ */
