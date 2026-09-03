@@ -2,7 +2,7 @@ export default function SearchCategories() {
   return (
     <form
       action="#"
-      className="bg-on-primary tablet:flex-row tablet:justify-between tablet:items-center tablet:max-w-7/10 mx-auto mt-10 flex w-full max-w-9/10 flex-col items-start gap-y-10 rounded-4xl px-2 py-3"
+      className="bg-on-primary tablet:flex-row tablet:justify-between tablet:items-center tablet:max-w-7/10 lg:max-w-3xl mx-auto mt-10 flex w-full max-w-9/10 flex-col items-start gap-y-10 rounded-4xl px-2 py-3"
     >
       <section className="tablet:flex-row tablet:gap-7 flex flex-col gap-y-10 pl-7">
         <section className="flex gap-x-2">
