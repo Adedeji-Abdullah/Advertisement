@@ -32,18 +32,25 @@ export default function CategoriesGrid() {
     },
     {
       id: 6,
-      icon: "rocket_launch",
-      title: "Startups",
+      icon: "grid_view",
+      title: "Other",
       color: "on-primary-container",
     },
   ];
 
   return (
-    <section className="my-3.5 px-2.5">
-      <section className="bg-on-primary flex size-32 w-full max-w-2/5 flex-col justify-center text-center">
-        <span className="material-symbols-outlined">rocket_launch</span>
-        <h3>Startups</h3>
-      </section>
+    <section className="my-3.5 grid grid-cols-2 gap-y-3 px-3">
+      {categoriesGrid.map((category) => {
+        return (
+          <section
+            key={category.id}
+            className="bg-on-primary mx-auto flex size-32 w-full max-w-9/10 cursor-pointer flex-col justify-center rounded-2xl text-center transition-all hover:-translate-y-1 hover:shadow-2xl"
+          >
+            <span className="material-symbols-outlined">{category.icon}</span>
+            <p>{category.title}</p>
+          </section>
+        );
+      })}
     </section>
   );
 }
