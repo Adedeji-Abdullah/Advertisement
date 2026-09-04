@@ -39,7 +39,7 @@ export default function CategoriesGrid() {
   ];
 
   return (
-    <section className="my-3.5 grid grid-cols-2 gap-y-3 px-3">
+    <section className="tablet:grid-cols-4 my-3.5 grid grid-cols-2 gap-y-3 px-3 lg:grid-cols-6">
       {categoriesGrid.map((category) => {
         return (
           <section
