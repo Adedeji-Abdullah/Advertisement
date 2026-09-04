@@ -4,37 +4,37 @@ export default function CategoriesGrid() {
       id: 1,
       icon: "rocket_launch",
       title: "Startups",
-      color: "on-primary-container",
+      color: "bg-on-primary-container",
     },
     {
       id: 2,
       icon: "code",
       title: "Tech",
-      color: "secondary-container",
+      color: "bg-secondary-container",
     },
     {
       id: 3,
       icon: "palette",
       title: "Creative",
-      color: "on-tertiary-container",
+      color: "bg-on-tertiary-container",
     },
     {
       id: 4,
       icon: "trending_up",
       title: "Growth",
-      color: "on-primary-container",
+      color: "bg-on-primary-container",
     },
     {
       id: 5,
       icon: "real_estate_agent",
       title: "Property",
-      color: "secondary-container",
+      color: "bg-secondary-container",
     },
     {
       id: 6,
       icon: "grid_view",
       title: "Other",
-      color: "on-primary-container",
+      color: "bg-on-primary-container",
     },
   ];
 
@@ -46,7 +46,9 @@ export default function CategoriesGrid() {
             key={category.id}
             className="bg-on-primary mx-auto flex size-32 w-full max-w-9/10 cursor-pointer flex-col justify-center rounded-2xl text-center transition-all hover:-translate-y-1 hover:shadow-2xl"
           >
-            <span className="material-symbols-outlined">{category.icon}</span>
+            <span className={`material-symbols-outlined ${category.color}`}>
+              {category.icon}
+            </span>
             <p>{category.title}</p>
           </section>
         );
