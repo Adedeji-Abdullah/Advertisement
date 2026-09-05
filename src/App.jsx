@@ -4,8 +4,8 @@ import axios from "axios";
 import Home from "./pages/home/Home";
 import Browse from "./pages/browse/Browse";
 import Insights from "./pages/insights/Insights";
-
 import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
 import "./App.css";
 
 function App() {
@@ -28,6 +28,7 @@ function App() {
     <BrowserRouter>
       {/* <div>{backendData}</div> */}
       <Header />
+      <Sidebar />
       <Routes>
         <Route index element={<Home />} />
         <Route path="/browse" element={<Browse />} />

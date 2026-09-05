@@ -1,11 +1,17 @@
-import AppNavLink from "./AppNavLink";
-import Button from "./Button";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import clsx from "clsx";
+import AppNavLink from "./AppNavLink";
+import Button from "./Button";
 import ProfileDP from "../assets/profile-dp.jpg";
 
 function Header() {
   const { pathname } = useLocation();
+  const [navVisibility, setNavVisibility] = useState(false);
+
+  const toggleNavVisibilty = () => {
+    setNavVisibility(!navVisibility);
+  };
 
   return (
     <header className="bg-surface-lowest fixed right-0 left-0 flex items-center justify-between px-10 py-3">
@@ -40,11 +46,12 @@ function Header() {
       </nav>
       <img
         src={ProfileDP}
-        width={512}
-        height={512}
-        className="w-12 rounded-full"
+        className="w-12 cursor-pointer rounded-full max-sm:hidden"
         alt="profile"
       />
+      <button className="tablet:hidden cursor-pointer">
+        <span className="material-symbols-outlined">menu</span>
+      </button>
     </header>
   );
 }
