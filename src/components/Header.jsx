@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { MorphIcon } from "morphicons/react";
+import { Menu, X } from "lucide";
 import clsx from "clsx";
 import AppNavLink from "./AppNavLink";
 import Button from "./Button";
@@ -49,8 +51,16 @@ function Header() {
         className="w-12 cursor-pointer rounded-full max-sm:hidden"
         alt="profile"
       />
-      <button className="tablet:hidden cursor-pointer">
-        <span className="material-symbols-outlined">menu</span>
+      <button
+        className="tablet:hidden cursor-pointer"
+        onClick={toggleNavVisibilty}
+        aria-expanded={navVisibility}
+      >
+        <MorphIcon
+          icon={navVisibility ? X : Menu}
+          size={30}
+          className="text-primary rounded-md p-1 transition-colors hover:bg-gray-200"
+        />
       </button>
     </header>
   );
