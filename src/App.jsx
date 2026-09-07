@@ -23,12 +23,23 @@ function App() {
   //   };
   //   fetchData();
   // }, []);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
   return (
     <BrowserRouter>
       {/* <div>{backendData}</div> */}
-      <Header />
-      <Sidebar />
+      <Header isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+      <Sidebar
+        isSidebarOpen={isSidebarOpen}
+        closeSidebar={closeSidebar}
+        toggleSidebar={toggleSidebar}
+      />
       <Routes>
         <Route index element={<Home />} />
         <Route path="/browse" element={<Browse />} />

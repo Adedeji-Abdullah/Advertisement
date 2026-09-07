@@ -7,18 +7,13 @@ import AppNavLink from "./AppNavLink";
 import Button from "./Button";
 import ProfileDP from "../assets/profile-dp.jpg";
 
-function Header() {
+function Header({ isSidebarOpen, toggleSidebar }) {
   const { pathname } = useLocation();
-  const [navVisibility, setNavVisibility] = useState(false);
-
-  const toggleNavVisibilty = () => {
-    setNavVisibility(!navVisibility);
-  };
 
   return (
     <header className="bg-surface-lowest fixed right-0 left-0 flex items-center justify-between px-10 py-3">
       <AppNavLink to="/">
-        <section className="flex gap-2">
+        <section className="flex gap-2 items-center">
           <span className="material-symbols-outlined text-primary">
             campaign
           </span>
@@ -53,12 +48,12 @@ function Header() {
       />
       <button
         className="tablet:hidden cursor-pointer"
-        onClick={toggleNavVisibilty}
-        aria-expanded={navVisibility}
+        onClick={toggleSidebar}
+        aria-expanded={isSidebarOpen}
       >
         <MorphIcon
-          icon={navVisibility ? X : Menu}
-          size={30}
+          icon={isSidebarOpen ? X : Menu}
+          size={32}
           className="text-primary rounded-md p-1 transition-colors hover:bg-gray-200"
         />
       </button>
