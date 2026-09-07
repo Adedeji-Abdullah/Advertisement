@@ -54,7 +54,7 @@ export default function SidebarMenu({
           isSidebarOpen ? "translate-x-0" : "translate-x-full",
         )}
       >
-        <section className="flex items-center justify-between border-b border-b-gray-300 pb-4">
+        <section className="flex items-center justify-between pb-8">
           {" "}
           <section className="flex items-center gap-2">
             <span className="material-symbols-outlined text-primary text-4xl!">
@@ -75,7 +75,8 @@ export default function SidebarMenu({
           </button>
         </section>
 
-        <nav className="flex flex-col gap-2 pt-8">
+        <nav className="flex flex-col gap-2 border-y border-y-gray-300 py-4">
+          <p className="font-hanken text-outline text-sm uppercase">menu</p>
           {sidebarLinks.map((sidebarLink) => {
             return (
               <section onClick={closeSidebar} key={sidebarLink.id}>
