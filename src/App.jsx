@@ -4,8 +4,8 @@ import axios from "axios";
 import Home from "./pages/home/Home";
 import Browse from "./pages/browse/Browse";
 import Insights from "./pages/insights/Insights";
-
 import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
 import "./App.css";
 
 function App() {
@@ -23,11 +23,23 @@ function App() {
   //   };
   //   fetchData();
   // }, []);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
   return (
     <BrowserRouter>
       {/* <div>{backendData}</div> */}
-      <Header />
+      <Header isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+      <Sidebar
+        isSidebarOpen={isSidebarOpen}
+        closeSidebar={closeSidebar}
+        toggleSidebar={toggleSidebar}
+      />
       <Routes>
         <Route index element={<Home />} />
         <Route path="/browse" element={<Browse />} />

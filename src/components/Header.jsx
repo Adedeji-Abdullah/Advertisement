@@ -1,16 +1,18 @@
+import { useLocation } from "react-router-dom";
+import { MorphIcon } from "morphicons/react";
+import { Menu, X } from "lucide";
+import clsx from "clsx";
 import AppNavLink from "./AppNavLink";
 import Button from "./Button";
-import { useLocation } from "react-router-dom";
-import clsx from "clsx";
 import ProfileDP from "../assets/profile-dp.jpg";
 
-function Header() {
+function Header({ isSidebarOpen, toggleSidebar }) {
   const { pathname } = useLocation();
 
   return (
     <header className="bg-surface-lowest fixed right-0 left-0 flex items-center justify-between px-10 py-3">
       <AppNavLink to="/">
-        <section className="flex gap-2">
+        <section className="flex items-center gap-2">
           <span className="material-symbols-outlined text-primary">
             campaign
           </span>
@@ -40,11 +42,20 @@ function Header() {
       </nav>
       <img
         src={ProfileDP}
-        width={512}
-        height={512}
-        className="w-12 rounded-full"
+        className="w-12 cursor-pointer rounded-full max-sm:hidden"
         alt="profile"
       />
+      <button
+        className="tablet:hidden cursor-pointer"
+        onClick={toggleSidebar}
+        aria-expanded={isSidebarOpen}
+      >
+        <MorphIcon
+          icon={isSidebarOpen ? X : Menu}
+          size={32}
+          className="text-primary rounded-md p-1 transition-colors hover:bg-gray-200"
+        />
+      </button>
     </header>
   );
 }
