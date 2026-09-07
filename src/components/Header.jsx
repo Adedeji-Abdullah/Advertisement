@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { MorphIcon } from "morphicons/react";
 import { Menu, X } from "lucide";
@@ -13,7 +12,7 @@ function Header({ isSidebarOpen, toggleSidebar }) {
   return (
     <header className="bg-surface-lowest fixed right-0 left-0 flex items-center justify-between px-10 py-3">
       <AppNavLink to="/">
-        <section className="flex gap-2 items-center">
+        <section className="flex items-center gap-2">
           <span className="material-symbols-outlined text-primary">
             campaign
           </span>
