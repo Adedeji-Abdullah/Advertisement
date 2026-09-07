@@ -22,13 +22,13 @@ export default function Sidebar({
       />
       <aside
         className={clsx(
-          "bg-surface-lowest tablet:hidden fixed top-0 right-0 bottom-0 left-20 z-50 pt-30 shadow-2xl transition-transform duration-300 ease-in-out",
+          "bg-surface-lowest tablet:hidden fixed top-0 right-0 bottom-0 left-20 z-50 px-8 pt-8 shadow-2xl transition-transform duration-300 ease-in-out",
           isSidebarOpen ? "translate-x-0" : "translate-x-full",
         )}
       >
-        <section className="flex">
+        <section className="flex items-center justify-between">
           {" "}
-          <section className="flex gap-2">
+          <section className="flex items-center gap-2">
             <span className="material-symbols-outlined text-primary text-4xl!">
               campaign
             </span>
