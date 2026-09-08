@@ -84,7 +84,7 @@ export default function SidebarMenu({
                 <AppNavLink to={sidebarLink.location}>
                   <span
                     className={clsx(
-                      "hover:bg-surface-dim active:bg-surface-dim flex items-center gap-2 rounded-lg px-3 py-2 transition-colors",
+                      "hover:bg-surface-dim flex items-center gap-2 rounded-lg px-3 py-2 transition-colors",
                       pathname === sidebarLink.location
                         ? "bg-surface-dim"
                         : "bg-transparent",
