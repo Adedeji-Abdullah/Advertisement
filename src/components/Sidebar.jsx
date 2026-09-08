@@ -6,10 +6,12 @@ export default function Sidebar({
   toggleSidebar,
 }) {
   return (
-    <SidebarMenu
-      isSidebarOpen={isSidebarOpen}
-      closeSidebar={closeSidebar}
-      toggleSidebar={toggleSidebar}
-    />
+    <section className="tablet:hidden">
+      <SidebarMenu
+        isSidebarOpen={isSidebarOpen}
+        closeSidebar={closeSidebar}
+        toggleSidebar={toggleSidebar}
+      />
+    </section>
   );
 }
