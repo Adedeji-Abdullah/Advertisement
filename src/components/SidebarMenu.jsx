@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import clsx from "clsx";
 import { MorphIcon } from "morphicons/react";
 import { Menu, X } from "lucide";
+import SidebarQuickLinks from "./SidebarQuickLinks";
 import AppNavLink from "./AppNavLink";
 export default function SidebarMenu({
   isSidebarOpen,
@@ -99,6 +100,7 @@ export default function SidebarMenu({
             );
           })}
         </nav>
+        <SidebarQuickLinks />
       </aside>
     </section>
   );

@@ -2,7 +2,7 @@ import CategoriesGrid from "./CategoriesGrid";
 export default function PopularCategories() {
   return (
     <>
-      <section className="bg-surface-lowest mt-10 flex items-end justify-between px-7 py-8">
+      <section className="bg-surface-lowest mt-10 flex items-end justify-between px-5 py-8">
         <section>
           <h3>Popular Categories</h3>
           <p className="font-geist text-sm text-gray-500">
