@@ -7,7 +7,7 @@ export default function SidebarQuickLinks() {
         <ul className="flex flex-col gap-3">
           <li>
             <NavLink
-              to="#"
+              to="/"
               className="hover:text-primary text-lg transition-colors"
             >
               Pricing
@@ -15,7 +15,7 @@ export default function SidebarQuickLinks() {
           </li>
           <li>
             <NavLink
-              to="#"
+              to="/"
               className="hover:text-primary text-lg transition-colors"
             >
               Help Center
@@ -23,7 +23,7 @@ export default function SidebarQuickLinks() {
           </li>
           <li>
             <NavLink
-              to="#"
+              to="/"
               className="hover:text-primary text-lg transition-colors"
             >
               About Us
@@ -31,7 +31,7 @@ export default function SidebarQuickLinks() {
           </li>
           <li>
             <NavLink
-              to="#"
+              to="/"
               className="hover:text-primary text-lg transition-colors"
             >
               Contact
