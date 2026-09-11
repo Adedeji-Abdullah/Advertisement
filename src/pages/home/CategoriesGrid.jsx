@@ -28,13 +28,13 @@ export default function CategoriesGrid() {
       id: 5,
       icon: "real_estate_agent",
       title: "Property",
-      color: "bg-secondary-container",
+      color: "bg-on-primary-container",
     },
     {
       id: 6,
       icon: "grid_view",
       title: "Other",
-      color: "bg-on-primary-container",
+      color: "bg-on-tertiary-container",
     },
   ];
 
@@ -46,7 +46,9 @@ export default function CategoriesGrid() {
             key={category.id}
             className="bg-on-primary mx-auto flex size-32 w-full max-w-9/10 cursor-pointer flex-col justify-center rounded-2xl text-center transition-all hover:-translate-y-1 hover:shadow-2xl"
           >
-            <span className={`material-symbols-outlined ${category.color}`}>
+            <span
+              className={`material-symbols-outlined ${category.color} tablet:text-4xl! mx-auto w-full max-w-1/2 rounded-2xl py-5 text-3xl!`}
+            >
               {category.icon}
             </span>
             <p>{category.title}</p>
