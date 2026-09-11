@@ -1,6 +1,7 @@
 import Headline from "./Headline";
-import PopularCategories from "./PopularCategories";
 import SearchCategories from "./SearchCategories";
+import PopularCategories from "./PopularCategories";
+import FeaturedAds from "./FeaturedAds";
 
 function Home() {
   return (
@@ -8,6 +9,7 @@ function Home() {
       <Headline />
       <SearchCategories />
       <PopularCategories />
+      <FeaturedAds />
     </main>
   );
 }

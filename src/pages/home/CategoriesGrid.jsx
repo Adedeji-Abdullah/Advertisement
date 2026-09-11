@@ -47,7 +47,7 @@ export default function CategoriesGrid() {
             className="bg-on-primary mx-auto flex size-32 w-full max-w-9/10 cursor-pointer flex-col justify-center rounded-2xl text-center transition-all hover:-translate-y-1 hover:shadow-2xl"
           >
             <span
-              className={`material-symbols-outlined ${category.color} tablet:text-4xl! mx-auto w-full max-w-1/2 rounded-2xl py-5 text-3xl!`}
+              className={`material-symbols-outlined ${category.color} tablet:text-4xl! mx-auto w-full max-w-9/20 rounded-2xl py-5 text-3xl!`}
             >
               {category.icon}
             </span>

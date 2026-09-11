@@ -4,8 +4,8 @@ export default function PopularCategories() {
     <>
       <section className="bg-surface-lowest mt-10 flex items-end justify-between px-5 py-8">
         <section>
-          <h3>Popular Categories</h3>
-          <p className="font-geist text-sm text-gray-500">
+          <h2>Popular Categories</h2>
+          <p className="font-geist text-base text-gray-500">
             Explore curated listings by industry
           </p>
         </section>
