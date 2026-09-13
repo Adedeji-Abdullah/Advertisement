@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import ProfileDP from "../assets/profile-dp.jpg";
+import ProfileDP from "../../assets/profile-dp.jpg";
 
 export default function SidebarAccount() {
   return (

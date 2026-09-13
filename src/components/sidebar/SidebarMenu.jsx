@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom";
 import clsx from "clsx";
 import { MorphIcon } from "morphicons/react";
 import { Menu, X } from "lucide";
-import AppNavLink from "./AppNavLink";
+import AppNavLink from "../AppNavLink";
 import SidebarQuickLinks from "./SidebarQuickLinks";
 import SidebarAccount from "./SidebarAccount";
 export default function SidebarMenu({
