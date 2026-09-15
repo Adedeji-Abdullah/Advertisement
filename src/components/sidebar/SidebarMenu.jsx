@@ -53,7 +53,7 @@ export default function SidebarMenu({
       />
       <aside
         className={clsx(
-          "bg-surface-lowest tablet:hidden fixed top-0 right-0 bottom-0 left-20 z-50 px-8 pt-8 shadow-2xl transition-transform duration-300 ease-in-out",
+          "bg-surface-lowest tablet:hidden fixed top-0 right-0 bottom-0 left-20 z-50 flex flex-col overflow-y-auto px-8 pt-5 shadow-2xl transition-transform duration-300 ease-in-out",
           isSidebarOpen ? "translate-x-0" : "translate-x-full",
         )}
       >
