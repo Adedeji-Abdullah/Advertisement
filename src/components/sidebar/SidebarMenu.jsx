@@ -2,8 +2,9 @@ import { useLocation } from "react-router-dom";
 import clsx from "clsx";
 import { MorphIcon } from "morphicons/react";
 import { Menu, X } from "lucide";
+import AppNavLink from "../AppNavLink";
 import SidebarQuickLinks from "./SidebarQuickLinks";
-import AppNavLink from "./AppNavLink";
+import SidebarAccount from "./SidebarAccount";
 export default function SidebarMenu({
   isSidebarOpen,
   closeSidebar,
@@ -38,7 +39,8 @@ export default function SidebarMenu({
   ];
 
   return (
-    <section className="tablet:hidden">
+    <>
+      {" "}
       <span
         className={clsx(
           "tablet:hidden fixed inset-0 z-40 bg-black/30 backdrop-blur-sm transition-all duration-300",
@@ -101,7 +103,8 @@ export default function SidebarMenu({
           })}
         </nav>
         <SidebarQuickLinks />
+        <SidebarAccount />
       </aside>
-    </section>
+    </>
   );
 }

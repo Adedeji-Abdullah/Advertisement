@@ -26,7 +26,7 @@ export default function SearchCategories() {
       </section>
       <button
         type="submit"
-        className="bg-primary text-surface hover:bg-primary-container tablet:max-w-3/10 tablet:ml-0 w-full cursor-pointer rounded-full px-2 py-3 text-sm font-bold transition-colors"
+        className="bg-primary text-surface hover:bg-primary-container tablet:max-w-3/10 tablet:ml-0 w-full cursor-pointer rounded-[1.25rem] px-2 py-3 text-sm font-bold transition-colors"
       >
         Search
       </button>

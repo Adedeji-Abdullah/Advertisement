@@ -5,7 +5,7 @@ import Home from "./pages/home/Home";
 import Browse from "./pages/browse/Browse";
 import Insights from "./pages/insights/Insights";
 import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./components/sidebar/Sidebar";
 import "./App.css";
 
 function App() {
