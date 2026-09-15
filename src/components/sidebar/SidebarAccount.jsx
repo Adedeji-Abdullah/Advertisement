@@ -10,9 +10,12 @@ export default function SidebarAccount() {
           alt="profile picture"
           className="w-12 rounded-full"
         />
-        <div>
+        <div className="min-w-0">
           <p>Alex Morgan</p>
-          <a href="mailto:alex@advantamarket.com" className="text-gray-600">
+          <a
+            href="mailto:alex@advantamarket.com"
+            className="block truncate text-gray-600"
+          >
             alex@advantamarket.com
           </a>
         </div>
