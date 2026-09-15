@@ -3,7 +3,7 @@ import ProfileDP from "../../assets/profile-dp.jpg";
 
 export default function SidebarAccount() {
   return (
-    <section className="absolute bottom-0 flex flex-col items-center justify-center gap-4 border-t border-t-gray-300 py-10">
+    <section className="mt-auto flex flex-col items-center justify-center gap-4 border-t border-t-gray-300 py-10">
       <section className="bg-inverse-on-surface flex gap-3 rounded-2xl px-5 py-3 font-semibold">
         <img
           src={ProfileDP}
